@@ -1,0 +1,89 @@
+{
+  "name": "plugin-2",
+  "displayName": "Plugin 2",
+  "description": "My VS Code Plugin",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "activationEvents": [
+    "onCommand:case-converter.toUpperCase",
+    "onCommand:case-converter.toLowerCase",
+    "onCommand:case-converter.toCamelCase",
+    "onCommand:case-converter.toSnakeCase",
+    "onCommand:case-converter.toKebabCase"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "case-converter.toUpperCase",
+        "title": "Convert to UPPERCASE"
+      },
+      {
+        "command": "case-converter.toLowerCase",
+        "title": "Convert to lowercase"
+      },
+      {
+        "command": "case-converter.toCamelCase",
+        "title": "Convert to CamelCase"
+      },
+      {
+        "command": "case-converter.toSnakeCase",
+        "title": "Convert to snake_case"
+      },
+      {
+        "command": "case-converter.toKebabCase",
+        "title": "Convert to kebab-case"
+      },
+      {
+        "command": "case-converter.toTitleCase",
+        "title": "Convert to Title Case"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "case-converter.toUpperCase",
+        "key": "ctrl+alt+z",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "case-converter.toLowerCase",
+        "key": "ctrl+alt+x",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "case-converter.toCamelCase",
+        "key": "ctrl+alt+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "case-converter.toSnakeCase",
+        "key": "ctrl+alt+v",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "case-converter.toKebabCase",
+        "key": "ctrl+alt+b",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "case-converter.toTitleCase",
+        "key": "ctrl+alt+a",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^18.17.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.2.2",
+    "vscode": "^1.80.0"
+  }
+}
